@@ -5,9 +5,10 @@ import Image from "next/image";
 import { profile } from "@/lib/data";
 
 const links = [
-  { id: "home", label: "Home" },
+  { id: "home", label: "Home", mobile: false },
   { id: "expertise", label: "Expertise" },
   { id: "projects", label: "Projects" },
+  { id: "github", label: "GitHub" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
@@ -17,7 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => {
-      const hit = links.find(({ id }) => {
+      const hit = [...links].reverse().find(({ id }) => {
         const el = document.getElementById(id);
         if (!el) return false;
         const r = el.getBoundingClientRect();
@@ -52,7 +53,7 @@ export default function Navbar() {
             <a
               key={l.id}
               href={`#${l.id}`}
-              className={`px-2 sm:px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors ${
+              className={`${l.mobile === false ? "hidden sm:inline-block" : ""} px-2 sm:px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors ${
                 active === l.id ? "text-sea-2 bg-sea/10" : "text-mist-2 hover:text-white hover:bg-white/5"
               }`}
             >

@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
-import { experience, expertise, profile, projects } from "@/lib/data";
+import { experience, expertise, profile, projects, repos } from "@/lib/data";
 
 export const runtime = "nodejs";
 
@@ -28,7 +28,10 @@ ${projects
     (p) =>
       `### ${p.title} (${p.period}) — ${p.category}\nChallenge: ${p.challenge}\nSolution: ${p.solution}\nOutcome: ${p.outcome}\nTech: ${p.tech.join(", ")}`,
   )
-  .join("\n\n")}`;
+  .join("\n\n")}
+
+## Open-source GitHub repositories (${repos.length})
+${repos.map((r) => `- ${r.name} (${r.year}, ${r.language}): ${r.description} — ${r.url}`).join("\n")}`;
 
 type Incoming = { role: "user" | "assistant"; content: string };
 

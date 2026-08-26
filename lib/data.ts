@@ -308,3 +308,70 @@ export const aboutParagraphs = [
   "My work spans multi-agent LLM systems, retrieval pipelines, computer vision, time-series forecasting, and — most recently — a real-time telephony platform where a bad millisecond means a dropped call.",
   "I care about systems that survive production: typed contracts, property-based tests, observability, and clean boundaries between services.",
 ];
+
+export type Repo = {
+  name: string;
+  url: string;
+  year: string;
+  language: string;
+  description: string;
+  tags: string[];
+};
+
+/** Public GitHub repositories — year is taken from the last commit. */
+export const repos: Repo[] = [
+  {
+    name: "MedicalImagingandRadiology",
+    url: "https://github.com/MuhammedEman14/MedicalImagingandRadiology",
+    year: "2026",
+    language: "Python · JavaScript",
+    description:
+      "A Flask-based medical image classification web app that supports both pre-trained and fully customizable models for a range of diseases, with built-in dataset management and model-training workflows.",
+    tags: ["Flask", "Deep Learning", "Medical Imaging", "Model Training"],
+  },
+  {
+    name: "Techmart",
+    url: "https://github.com/MuhammedEman14/Techmart",
+    year: "2025",
+    language: "JavaScript",
+    description:
+      "Full-stack e-commerce analytics platform delivering real-time business intelligence, customer-behaviour analytics, fraud detection and inventory management — with ML for customer segmentation, lifetime-value prediction, churn detection and personalised product recommendations.",
+    tags: ["Full-Stack", "Analytics", "ML", "Fraud Detection"],
+  },
+  {
+    name: "NLP-Based-Recommendation-through-Citation-and-Metadata-Analysis",
+    url: "https://github.com/MuhammedEman14/NLP-Based-Recommendation-through-Citation-and-Metadata-Analysis",
+    year: "2025",
+    language: "Jupyter Notebook",
+    description:
+      "Research-paper recommender that tackles the explosion of academic literature: combines NLP over abstracts, citation-graph analysis and metadata to surface the most relevant studies, with visualisations to explore the results.",
+    tags: ["NLP", "Citation Analysis", "Recommender Systems"],
+  },
+  {
+    name: "Image-Reconstruction-Using-Pixel-RNN",
+    url: "https://github.com/MuhammedEman14/Image-Reconstruction-Using-Pixel-RNN",
+    year: "2025",
+    language: "Python",
+    description:
+      "Trained a PixelRNN generative model to reconstruct occluded regions of images pixel by pixel; the attached report documents the architecture, training and reconstruction results.",
+    tags: ["PixelRNN", "Generative Models", "Computer Vision"],
+  },
+  {
+    name: "Automatic-Test-Case-Generator",
+    url: "https://github.com/MuhammedEman14/Automatic-Test-Case-Generator",
+    year: "2024",
+    language: "TypeScript · JavaScript",
+    description:
+      "Node.js + TypeScript application with a web frontend that automatically generates test cases for user-provided TypeScript functions, runs them, and extracts code-coverage metrics from the results.",
+    tags: ["Node.js", "TypeScript", "Test Automation", "Code Coverage"],
+  },
+  {
+    name: "Eye-Disease-Detection",
+    url: "https://github.com/MuhammedEman14/Eye-Disease-Detection",
+    year: "2024",
+    language: "Jupyter Notebook · Python",
+    description:
+      "Eye-disease classifier built on a VGG16-based TensorFlow/Keras model, served through a Flask API with a web frontend for uploading retinal images and getting instant predictions.",
+    tags: ["TensorFlow", "VGG16", "Flask", "Medical AI"],
+  },
+];
