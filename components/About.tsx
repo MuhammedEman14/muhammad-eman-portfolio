@@ -1,4 +1,5 @@
-import { aboutParagraphs, experience } from "@/lib/data";
+import Image from "next/image";
+import { aboutParagraphs, experience, profile } from "@/lib/data";
 import { Check } from "./Icons";
 
 export default function About() {
@@ -6,6 +7,20 @@ export default function About() {
     <section id="about" className="py-24 bg-ink-2/50 border-y border-line/60">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-20">
         <div>
+          {profile.photo && (
+            <div className="mb-10 flex items-center gap-6">
+              <div className="relative shrink-0 w-28 h-28 md:w-36 md:h-36 rounded-full p-[3px] gradient-bg shadow-2xl shadow-sea/30">
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-ink-3">
+                  <Image src={profile.photo} alt={profile.name} fill sizes="144px" className="object-cover" priority />
+                </div>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-white">{profile.name}</p>
+                <p className="text-sea-2 font-semibold text-sm">{profile.title}</p>
+                <p className="text-mist-3 text-sm mt-1">{profile.location}</p>
+              </div>
+            </div>
+          )}
           <p className="text-sm font-bold tracking-widest text-sea-2 uppercase mb-3">About</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">
             Research driven. <span className="gradient-text">Production minded.</span>

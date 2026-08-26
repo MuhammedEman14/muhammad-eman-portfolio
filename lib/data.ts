@@ -11,6 +11,8 @@ export const profile = {
   github: "https://github.com/MuhammedEman14",
   linkedin: "https://www.linkedin.com/in/muhammad-eman-0b7304247/",
   location: "Pakistan",
+  /** Drop your photo at public/profile.jpg (square crop works best). Set to "" to hide. */
+  photo: "/profile.jpg",
   availability:
     "Currently open to senior AI engineering roles, LLM/agentic-workflow consulting, and long-term product collaborations.",
 };
