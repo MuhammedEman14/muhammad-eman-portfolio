@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --color-ink: #06090b;
+  --color-ink-2: #0b1116;
+  --color-ink-3: #111a21;
+  --color-line: #1c2a33;
+  --color-line-2: #26363f;
+  --color-mist: #c9d6dc;
+  --color-mist-2: #8fa3ad;
+  --color-mist-3: #5d717b;
+  --color-ember: #f59e0b;
+  --color-ember-2: #fbbf24;
+  --color-sea: #14b8a6;
+  --color-sea-2: #2dd4bf;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ink);
+  color: var(--color-mist);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.12) 0, transparent 45%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.1) 0, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(20, 184, 166, 0.06) 0, transparent 50%);
+  background-attachment: fixed;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2dd4bf 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #14b8a6 0%, #f59e0b 100%);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(201, 214, 220, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 214, 220, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #06090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2a33;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #26363f;
+}
+
+::selection {
+  background: rgba(45, 212, 191, 0.3);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.8s ease-out both;
+}
+.delay-1 {
+  animation-delay: 0.15s;
+}
+.delay-2 {
+  animation-delay: 0.3s;
+}
+.delay-3 {
+  animation-delay: 0.45s;
 }
