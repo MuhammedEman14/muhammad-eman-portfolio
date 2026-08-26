@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { profile } from "@/lib/data";
 import { Chat, Close, Send } from "./Icons";
 
@@ -106,9 +107,17 @@ export default function ChatWidget() {
           <div className="p-5 bg-ink-3/80 backdrop-blur-md border-b border-line flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-11 h-11 rounded-xl gradient-bg flex items-center justify-center text-xs font-black text-ink shadow-lg">
-                  {profile.initials}
-                </div>
+                {profile.photo ? (
+                  <div className="relative w-11 h-11 rounded-xl p-[2px] gradient-bg shadow-lg">
+                    <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-ink-3">
+                      <Image src={profile.photo} alt={profile.name} fill sizes="44px" className="object-cover" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-11 h-11 rounded-xl gradient-bg flex items-center justify-center text-xs font-black text-ink shadow-lg">
+                    {profile.initials}
+                  </div>
+                )}
                 <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-sea border-2 border-ink-3 rounded-full" />
               </div>
               <div>

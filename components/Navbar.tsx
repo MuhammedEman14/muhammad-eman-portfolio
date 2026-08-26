@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { profile } from "@/lib/data";
 
 const links = [
@@ -33,9 +34,17 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-ink/75 backdrop-blur-md border-b border-line">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 text-xl font-extrabold tracking-tighter text-white">
-          <span className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-ink text-xs font-black">
-            {profile.initials}
-          </span>
+          {profile.photo ? (
+            <span className="relative w-9 h-9 rounded-full p-[2px] gradient-bg flex-shrink-0">
+              <span className="relative block w-full h-full rounded-full overflow-hidden bg-ink-3">
+                <Image src={profile.photo} alt={profile.name} fill sizes="36px" className="object-cover" priority />
+              </span>
+            </span>
+          ) : (
+            <span className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-ink text-xs font-black">
+              {profile.initials}
+            </span>
+          )}
           <span className="hidden sm:inline">{profile.name}</span>
         </a>
         <nav className="flex items-center gap-0.5 sm:gap-2">
