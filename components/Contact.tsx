@@ -23,7 +23,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between gap-16 mb-24">
           <div className="max-w-xl">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter">
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight md:tracking-tighter text-balance break-words">
               Let&rsquo;s build something <span className="gradient-text italic">intelligent.</span>
             </h2>
             <p className="text-mist-2 text-xl mb-10 leading-relaxed font-medium">{profile.availability}</p>

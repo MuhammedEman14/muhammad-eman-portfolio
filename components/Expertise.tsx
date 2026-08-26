@@ -5,7 +5,7 @@ export default function Expertise() {
   return (
     <section id="expertise" className="py-24 bg-ink-2/50 border-y border-line/60">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-4">
           <div>
             <p className="text-sm font-bold tracking-widest text-sea-2 uppercase mb-3">Expertise</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Tools I ship with</h2>

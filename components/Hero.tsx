@@ -16,8 +16,8 @@ export default function Hero() {
           OPEN TO NEW CHALLENGES
         </span>
 
-        <h1 className="animate-rise delay-1 text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter max-w-5xl leading-[1.05]">
-          {profile.tagline} <span className="gradient-text italic">{profile.taglineAccent}</span>{" "}
+        <h1 className="animate-rise delay-1 text-[2.1rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tight md:tracking-tighter max-w-5xl leading-[1.1] text-balance break-words px-1">
+          {profile.tagline} <span className="gradient-text italic pr-1">{profile.taglineAccent}</span>{" "}
           {profile.taglineEnd}
         </h1>
 

@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-4">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-4">
           <div>
             <p className="text-sm font-bold tracking-widest text-sea-2 uppercase mb-3">Projects</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">Production AI Case Studies</h2>
